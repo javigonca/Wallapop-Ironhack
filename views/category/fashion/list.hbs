@@ -1,0 +1,25 @@
+<div class="fashions-container">
+  <div>
+    <h1>Fashion List</h1>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {{#each fashions as |fashion|}}
+      <div class="card fashions-cards" style="width: 12rem;">
+        {{#if fashion.image}}
+          <img class="card-img-top" src="{{fashion.image}}" />
+        {{/if}}
+        <h5 class="card-title">{{fashion.title}}</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Seller - {{fashion.user}}</li>
+          <li class="list-group-item"> Price - {{fashion.price}}</li>
+        </ul>
+        <div>
+          <a class="btn btn-primary" href="/fashion/{{fashion.id}}/update">EDIT</a>
+          <form action="/fashion/{{car.id}}/delete" method="post">
+            <button class="btn btn-danger">DELETE</button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

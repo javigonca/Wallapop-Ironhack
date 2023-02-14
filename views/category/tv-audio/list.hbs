@@ -1,0 +1,25 @@
+<div class="audios-container">
+  <div>
+    <h1>TV-AUDIO List</h1>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {{#each audios as |audio|}}
+      <div class="card audios-cards" style="width: 12rem;">
+        {{#if audio.image}}
+          <img class="card-img-top" src="{{audio.image}}" />
+        {{/if}}
+        <h5 class="card-title">{{audio.title}}</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Seller - {{audio.user}}</li>
+          <li class="list-group-item"> Price - {{audio.price}}</li>
+        </ul>
+        <div>
+          <a class="btn btn-primary" href="/tv-audio/{{audio.id}}/update">EDIT</a>
+          <form action="/tv-audio/{{audio.id}}/delete" method="post">
+            <button class="btn btn-danger">DELETE</button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

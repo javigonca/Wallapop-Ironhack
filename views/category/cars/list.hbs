@@ -1,0 +1,25 @@
+<div class="cars-container">
+  <div>
+    <h1>Cars List</h1>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {{#each cars as |car|}}
+      <div class="card cars-cards" style="width: 12rem;">
+        {{#if car.image}}
+          <img class="card-img-top" src="{{car.image}}" />
+        {{/if}}
+        <h5 class="card-title">{{car.title}}</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Seller - {{car.user}}</li>
+          <li class="list-group-item"> Price - {{car.price}}</li>
+        </ul>
+        <div>
+          <a class="btn btn-primary" href="/cars/{{car.id}}/update">EDIT</a>
+          <form action="/cars/{{car.id}}/delete" method="post">
+            <button class="btn btn-danger">DELETE</button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
