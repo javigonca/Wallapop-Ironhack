@@ -2,11 +2,15 @@ const express = require("express");
 
 const common = require("../controllers/common.controller");
 const category = require("../controllers/category.controller");
+const users = require("../controllers/users.controller");
 
 const router = express.Router();
 
 
 router.get("/", common.home),
+
+router.get("/users/new", users.create);
+
 
 
 router.get("/category/cars/list", category.list),
