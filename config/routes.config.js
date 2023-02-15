@@ -10,7 +10,9 @@ const router = express.Router();
 router.get("/", common.home),
 
 router.get("/users/new", users.create);
+router.post("/users", users.doCreate);
 
+router.get("/login", users.login);
 
 
 router.get("/category/cars/list", category.list),

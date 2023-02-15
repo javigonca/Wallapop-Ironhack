@@ -13,3 +13,7 @@ module.exports.doCreate = (req, res, next) => {
       })
       .catch(next)   
     };
+
+module.exports.login = (req, res) => {
+    res.render("users/login");
+}   
