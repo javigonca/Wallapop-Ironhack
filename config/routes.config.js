@@ -15,8 +15,8 @@ router.post("/users", users.doCreate);
 router.get("/login", users.login);
 
 
-router.get("/category/cars/list", category.list),
-router.get("/category/fashion/list", category.list),
-router.get("/category/tv-audio/list", category.list),
+router.get("/category/cars/list", category.carList),
+router.get("/category/fashion/list", category.fashionList),
+router.get("/category/tv-audio/list", category.tvList),
 
 module.exports = router;
