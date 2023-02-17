@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const { schema } = require("./car.model");
+
 
 const schemaUser = new mongoose.Schema (
     {
@@ -27,7 +27,7 @@ const schemaUser = new mongoose.Schema (
     { timestamps: true }
 );
 
-schema.pre("save", function (next){
+schemaUser.pre("save", function (next){
     const user = this;
 
     if  (user.isModified("password")) {

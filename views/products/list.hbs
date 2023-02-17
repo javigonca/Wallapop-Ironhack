@@ -1,0 +1,25 @@
+<div class="products-container">
+  <div>
+    <h1> Products List</h1>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {{#each products as |product|}}
+      <div class="card products-cards" style="width: 12rem;">
+        {{#if product.image}}
+          <img class="card-img-top" src="{{product.image}}" />
+        {{/if}}
+        <h5 class="card-title">{{product.title}}</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Seller - {{product.user}}</li>
+          <li class="list-group-item"> Price - {{product.price}}</li>
+        </ul>
+        <div>
+          <a class="btn btn-primary" href="/products/{{product.id}}/update">EDIT</a>
+          <form action="/products/{{product.id}}/delete" method="post">
+            <button class="btn btn-danger">DELETE</button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

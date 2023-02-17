@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-const schemaAudio = new mongoose.Schema (
+const schemaProduct = new mongoose.Schema (
     {
         user: {
-            type: String,
+            type: String,            
             required: [true, "user is required"],
         },
         image: { type: String },
@@ -17,10 +17,17 @@ const schemaAudio = new mongoose.Schema (
             type: String,
             required: [true, "title is required"],
         },
+
+        category: {
+            type: String,
+            required: [true, "title is required"],
+            enum: ["fashion", "vehicle", "electronic"],
+
+        }
         
     },
 
     { timestamps: true }
 );
 
-module.exports = mongoose.model("Audio", schemaAudio);
+module.exports = mongoose.model("Product", schemaProduct);
