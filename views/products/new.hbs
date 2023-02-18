@@ -4,28 +4,35 @@
 
   <div class="mb-3">
     <label for="image" class="form-label">image</label>
-    <input value="{{product.image}}" name="image" type="text" id="Image">
+    <input value="{{product.image}}" name="image" type="text" class="form-control {{#if errors.image}}is-invalid{{/if}}" id="Image">
   </div>
 
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
-    <input value="{{product.title}}" name="title" type="text" id="Title">
+    <input value="{{product.title}}" name="title" type="text"  id="Title">
   </div>
   
-    <div class="mb-3">
+  <div class="mb-3">
     <label for="user" class="form-label">User</label>
     <input value="{{product.user}}" name="user" type="text" id="User">
   </div>
 
-    <div class="mb-3">
+  <div class="mb-3">
     <label for="price" class="form-label">Price</label>
     <input value="{{product.price}}" name="price" type="text" id="Price">
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <input value="{{product.description}}" name="description" type="text" id="description">
   </div>
 
   <div class="mb-3">
     <label for="category" class="form-label">Category</label>
     <input value="{{product.category}}" name="category" type="text" id="Category">
   </div>
+
+ 
   
   <button type="submit" class="btn btn-primary">Create</button>
 </form>

@@ -10,14 +10,12 @@
         {{/if}}
         <h5 class="card-title">{{product.title}}</h5>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Seller - {{product.user}}</li>
+          <li class="list-group-item">Seller - {{product.user.name}}</li>
           <li class="list-group-item"> Price - {{product.price}}</li>
         </ul>
         <div>
-          <a class="btn btn-primary" href="/products/{{product.id}}/update">EDIT</a>
-          <form action="/products/{{product.id}}/delete" method="post">
-            <button class="btn btn-danger">DELETE</button>
-          </form>
+         <a href="/products/{{product.id}}" class="btn btn-primary btn-sm">Detail</a>
+          
         </div>
       </div>
     {{/each}}

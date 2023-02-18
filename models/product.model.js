@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const schemaProduct = new mongoose.Schema (
     {
         user: {
-            type: String,            
+            type: mongoose.Schema.Types.ObjectId,  
+            ref: 'User',          
             required: [true, "user is required"],
         },
         image: { type: String },
@@ -16,6 +17,11 @@ const schemaProduct = new mongoose.Schema (
         title: {
             type: String,
             required: [true, "title is required"],
+        },
+
+        description: {
+            type: String,
+            required: [true, "description is required"],
         },
 
         category: {
