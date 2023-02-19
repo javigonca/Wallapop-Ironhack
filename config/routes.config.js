@@ -25,8 +25,8 @@ router.get("/products/new", secure.isAuthenticated, products.create);
 router.post("/products", secure.isAuthenticated, products.doCreate);
 
 router.get("/products/:id", products.detail);
-router.get("/products/:id/update", products.update);
-router.post("/products/:id", products.doUpdate);
+router.get("/products/:id/update", secure.isAuthenticated, products.update);
+router.post("/products/:id", secure.isAuthenticated, products.doUpdate);
 router.post("/products/:id/delete", secure.isAuthenticated, products.delete);
 
 
